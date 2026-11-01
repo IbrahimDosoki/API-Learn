@@ -12,4 +12,9 @@ class UserController extends Controller
         $profile = User::findOrFail($id)->profile;
         return response()->json($profile);
     }
+
+    public function getTasks($id) {
+        $tasks = User::findOrFail($id)->tasks;
+        return response()->json($tasks);
+    }
 }

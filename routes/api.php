@@ -25,3 +25,4 @@ Route::put('profile/{id}', [ProfileController::class, 'update']);
 Route::delete('profile/{id}', [ProfileController::class, 'destroy']);
 
 Route::get('/user/{id}/profile', [UserController::class, 'getProfile']);
+Route::get('/user/{id}/tasks', [UserController::class, 'getTasks']);
