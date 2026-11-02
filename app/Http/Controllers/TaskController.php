@@ -9,6 +9,9 @@ use App\Http\Requests\UpdateTaskRequest;
 
 class TaskController extends Controller
 {
+
+    public function addCategoriesToTask(){}
+
     public function index() {
         $task = Task::all();
         return response()->json($task, 200);

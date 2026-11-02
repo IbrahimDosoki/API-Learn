@@ -11,14 +11,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-// Route::get('/tasks', [TaskController::class, 'index']);
-// Route::post('/tasks', [TaskController::class, 'store']);
-// Route::put('/tasks/{id}', [TaskController::class, 'update']);
-// Route::get('/tasks/{id}', [TaskController::class, 'show']);
-// Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);
 
-
-Route::apiResource('tasks', TaskController::class);
 Route::post('profile', [ProfileController::class, 'store']);
 Route::get('profile/{id}', [ProfileController::class, 'show']);
 Route::put('profile/{id}', [ProfileController::class, 'update']);
@@ -26,3 +19,8 @@ Route::delete('profile/{id}', [ProfileController::class, 'destroy']);
 
 Route::get('/user/{id}/profile', [UserController::class, 'getProfile']);
 Route::get('/user/{id}/tasks', [UserController::class, 'getTasks']);
+
+
+Route::apiResource('tasks', TaskController::class);
+
+Route::post('tasks/{taskId}/categories', [TaskController::class, 'addCategoriesToTask']);
